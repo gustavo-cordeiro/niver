@@ -2,100 +2,95 @@
 <html lang = "pt-br">
 <head>
     <meta charset = "utf-8" />
+    <link rel="manifest" href="manifest.json">
+
     <title>Aniversário do Arthur</title>
 
     <link href="https://fonts.googleapis.com/css?family=Bangers|Schoolbell" rel="stylesheet">
 
     <style type="text/css">
 
-        html, body{
-            padding: 0;
+        html, body {
             margin: 0;
-            min-width: 100%;
-            min-height: 100%;
-            overflow: hidden;
-            background-color: #63759d;
-        }
-
-        .font-body {
+            width: 100%;
+            height: 100%;
+            color: #fdfcfe;
+            text-align: center;
             letter-spacing: 2px;
+            background-color: #7797b9;
             font-family: 'Schoolbell', cursive;
         }
 
-        .font-title {
-            letter-spacing: 2px;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 450%;
+            margin-bottom: 0;
             font-family: 'Bangers', cursive;
         }
 
-        .board {
-            top: 50%;
-            left: 50%;
-            z-index: 2;
-            width: 560px;
-            height: 315px;
-            display: block;
-            position: absolute;
-            margin: -157px 0 0 -280px;
-        }
-
-        .bg {
-            z-index: 1;
-        }
-
-        .no-event {
-            pointer-events: none;
-        }
-
-        .call {
-            font-size: 2em;
-            margin: .4em 0 0 0;
-            text-align: center;
-        }
-
-        .call--sub {
-            font-size: 1em;
-            display: inherit;
-            text-align: center;
-        }
-
-        .white-color {
-            color: #fdfcfe;
+        small {
+            font-size: 180%;
         }
 
         footer {
+            left: 0;
             bottom: 0;
             width: 100%;
+            font-size: 160%;
             position: absolute;
+            background-color: rgba(0,0,0,.2);
         }
 
-        footer p{
-            margin: .5em;
-            color: #fdfcfe;
-            text-align: center;
+        header, footer {
+            z-index: 1;
+        }
+
+        header {
+            position: relative;
+        }
+
+        video {
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          position: fixed;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+          video {
+            height: 300%; top: -100%;
+          }
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+          video {
+            width: 300%; left: -100%;
+          }
         }
 
     </style>
 </head>
 <body>
+    <header>
+        <h1 class="font-title call white-color">Turma do Arthur</h1>
+        <small class="font-body call--sub white-color">Venha comemorar meu aniversário</small>
+    </header>
 
-    <div style="height: 1">
-        <video width="auto" height="100%" autoplay loop autobuffer preload mute>
-            <source src="bg4.mp4" type="video/mp4">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/jRMKh26cvfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </video>
-    </div>
-    <div class="board">
-        <header>
-            <h1 class="font-title call white-color">Turma do Arthur</h1>
-            <small class="font-body call--sub white-color">Venha comemorar meu aniversário</small>
-        </header>
+    <video autoplay loop autobuffer preload mute>
+        <source src="bg4.mp4" type="video/mp4">
+    </video>
 
-        <footer>
-            <p class="font-body">
-                24/02 - Salão de festas - Cotia, rua das Amexeiras numero 297
-            </p>
-        </footer>
-    </div>
-
+    <footer>
+        <p class="font-body">
+            <a href="https://goo.gl/maps/DmxfffXq5HG2" target="_blank">
+                No dia 24/02 ás 17h no Salão de festas <br/> Cotia, rua das Amexeiras numero 297
+            </a>
+        </p>
+    </footer>
 </body>
 </html>
